@@ -1,0 +1,5 @@
+Run[1] 1
+/etc/nginx/nginx.conf
+worker_cpu_affinity_list 32,33,34,35,36,37,38,39,40,41,42,43,44;
+/home/martin/amd_wrk2/wrk --rate 10000 -t 2 -C 8,9 -c 400 -d 60s --latency https://localhost/1kb
+copy	0	9833.06	719.12MB	1.86ms	2.43ms	2.95ms	4.12ms	19.97ms	46.78ms	50.21ms	50.65ms

@@ -1,0 +1,216 @@
+Run[1] 1
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
+copy	1200000	983.30	71910000	1.83	2.34	2.88	4.08	4.73	4.91	5.13	5.13
+Run[2] 2
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 10000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
+copy	11980000	9832.64	719040000	1.75	2.40	2.87	4.11	25.89	42.40	47.49	48.61
+Run[3] 3
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 100000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
+copy	50650000	41554.79	2970000000	%!s(float64=19790)	%!s(float64=26940)	%!s(float64=31230)	%!s(float64=33820)	%!s(float64=34050)	%!s(float64=34110)	%!s(float64=34110)	%!s(float64=34110)
+Run[4] 4
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
+copy	51770000	42475.33	3030000000	%!s(float64=32770)	%!s(float64=44630)	%!s(float64=51600)	%!s(float64=55800)	%!s(float64=56400)	%!s(float64=56400)	%!s(float64=56400)	%!s(float64=56400)
+Run[5] 5
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000 -t 1 -C 8,9 -c 200 -d 60s --latency https://localhost/1kb
+copy	1200000	983.33	71920000	2.52	3.09	3.86	4.83	5.25	5.50	5.59	5.59
+Run[6] 6
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 10000 -t 1 -C 8,9 -c 200 -d 60s --latency https://localhost/1kb
+copy	11980000	9832.28	719020000	2.31	2.88	3.56	4.59	32.64	59.10	73.15	75.78
+Run[7] 7
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 100000 -t 1 -C 8,9 -c 200 -d 60s --latency https://localhost/1kb
+copy	50970000	41823.02	2990000000	%!s(float64=19840)	%!s(float64=26840)	%!s(float64=31080)	%!s(float64=33650)	%!s(float64=33950)	%!s(float64=34050)	%!s(float64=34080)	%!s(float64=34110)
+Run[8] 8
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000000 -t 1 -C 8,9 -c 200 -d 60s --latency https://localhost/1kb
+copy	50750000	41640.24	2970000000	%!s(float64=33080)	%!s(float64=44760)	%!s(float64=51600)	%!s(float64=55800)	%!s(float64=56400)	%!s(float64=56400)	%!s(float64=56400)	%!s(float64=56400)
+Run[9] 9
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000 -t 1 -C 8,9 -c 400 -d 60s --latency https://localhost/1kb
+copy	1200000	982.63	71860000	2.14	3.67	4.52	7.01	7.83	8.15	8.33	8.33
+Run[10] 10
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 10000 -t 1 -C 8,9 -c 400 -d 60s --latency https://localhost/1kb
+copy	11940000	9792.65	716120000	2.08	2.82	3.61	5.10	14.72	36.06	55.84	57.44
+Run[11] 11
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 100000 -t 1 -C 8,9 -c 400 -d 60s --latency https://localhost/1kb
+copy	50160000	41153.08	2940000000	%!s(float64=20070)	%!s(float64=27080)	%!s(float64=31230)	%!s(float64=33820)	%!s(float64=34180)	%!s(float64=34280)	%!s(float64=34310)	%!s(float64=34310)
+Run[12] 12
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000000 -t 1 -C 8,9 -c 400 -d 60s --latency https://localhost/1kb
+copy	50480000	41419.68	2960000000	%!s(float64=33280)	%!s(float64=44760)	%!s(float64=51600)	%!s(float64=55800)	%!s(float64=56400)	%!s(float64=56400)	%!s(float64=56400)	%!s(float64=56400)
+Run[13] 13
+/etc/nginx/nginx.conf
+worker_processes 2;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
+copy	1200000	983.32	71910000	1.60	2.05	2.59	3.51	3.75	3.87	3.98	3.98
+Run[14] 14
+/etc/nginx/nginx.conf
+worker_processes 2;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 10000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
+copy	11980000	9832.31	719040000	1.91	2.41	3.04	4.28	36.26	44.26	46.85	49.09
+Run[15] 15
+/etc/nginx/nginx.conf
+worker_processes 2;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 100000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
+copy	93370000	76611.66	5470000000	%!s(float64=7540)	%!s(float64=10290)	%!s(float64=11930)	%!s(float64=13110)	%!s(float64=13510)	%!s(float64=13840)	%!s(float64=13900)	%!s(float64=13930)
+Run[16] 16
+/etc/nginx/nginx.conf
+worker_processes 2;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
+copy	93730000	76905.47	5490000000	%!s(float64=31540)	%!s(float64=42960)	%!s(float64=49810)	%!s(float64=54000)	%!s(float64=54600)	%!s(float64=54600)	%!s(float64=54600)	%!s(float64=54600)
+Run[17] 17
+/etc/nginx/nginx.conf
+worker_processes 2;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000 -t 1 -C 8,9 -c 200 -d 60s --latency https://localhost/1kb
+copy	1200000	983.67	71940000	2.39	2.81	3.25	4.02	4.27	4.42	4.48	4.48
+Run[18] 18
+/etc/nginx/nginx.conf
+worker_processes 2;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 10000 -t 1 -C 8,9 -c 200 -d 60s --latency https://localhost/1kb
+copy	11980000	9831.96	719070000	2.95	3.68	4.42	5.55	38.24	62.69	67.14	67.46
+Run[19] 19
+/etc/nginx/nginx.conf
+worker_processes 2;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 100000 -t 1 -C 8,9 -c 200 -d 60s --latency https://localhost/1kb
+copy	92970000	76277.91	5450000000	%!s(float64=7720)	%!s(float64=10480)	%!s(float64=12130)	%!s(float64=13450)	%!s(float64=13990)	%!s(float64=14320)	%!s(float64=14520)	%!s(float64=14530)
+Run[20] 20
+/etc/nginx/nginx.conf
+worker_processes 2;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000000 -t 1 -C 8,9 -c 200 -d 60s --latency https://localhost/1kb
+copy	93290000	76541.12	5470000000	%!s(float64=31770)	%!s(float64=43120)	%!s(float64=49910)	%!s(float64=54000)	%!s(float64=54600)	%!s(float64=54600)	%!s(float64=54600)	%!s(float64=54600)
+Run[21] 21
+/etc/nginx/nginx.conf
+worker_processes 2;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000 -t 1 -C 8,9 -c 400 -d 60s --latency https://localhost/1kb
+copy	1200000	982.62	71860000	2.06	3.37	4.14	5.54	6.14	6.72	7.34	7.34
+Run[22] 22
+/etc/nginx/nginx.conf
+worker_processes 2;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 10000 -t 1 -C 8,9 -c 400 -d 60s --latency https://localhost/1kb
+copy	11940000	9792.64	716120000	1.74	2.55	3.40	4.85	16.45	37.06	40.13	42.43
+Run[23] 23
+/etc/nginx/nginx.conf
+worker_processes 2;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 100000 -t 1 -C 8,9 -c 400 -d 60s --latency https://localhost/1kb
+copy	90790000	74489.59	5320000000	%!s(float64=8210)	%!s(float64=11130)	%!s(float64=12870)	%!s(float64=14090)	%!s(float64=15230)	%!s(float64=16040)	%!s(float64=16200)	%!s(float64=16250)
+Run[24] 24
+/etc/nginx/nginx.conf
+worker_processes 2;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000000 -t 1 -C 8,9 -c 400 -d 60s --latency https://localhost/1kb
+copy	91210000	74837.02	5340000000	%!s(float64=31970)	%!s(float64=43120)	%!s(float64=49810)	%!s(float64=54000)	%!s(float64=54600)	%!s(float64=54600)	%!s(float64=54600)	%!s(float64=54600)
+Run[25] 25
+/etc/nginx/nginx.conf
+worker_processes 4;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
+copy	1200000	983.30	71910000	1.81	2.21	2.60	3.37	3.71	3.88	3.95	3.95
+Run[26] 26
+/etc/nginx/nginx.conf
+worker_processes 4;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 10000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
+copy	11980000	9832.25	719070000	2.10	2.57	3.04	4.07	31.60	39.01	42.37	42.69
+Run[27] 27
+/etc/nginx/nginx.conf
+worker_processes 4;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 100000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
+copy	92730000	76083.54	5430000000	%!s(float64=7740)	%!s(float64=10530)	%!s(float64=12210)	%!s(float64=13710)	%!s(float64=14350)	%!s(float64=14650)	%!s(float64=14700)	%!s(float64=14710)
+Run[28] 28
+/etc/nginx/nginx.conf
+worker_processes 4;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
+copy	92430000	75836.31	5420000000	%!s(float64=31600)	%!s(float64=43020)	%!s(float64=49910)	%!s(float64=54000)	%!s(float64=54600)	%!s(float64=54600)	%!s(float64=54600)	%!s(float64=54600)
+Run[29] 29
+/etc/nginx/nginx.conf
+worker_processes 4;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000 -t 1 -C 8,9 -c 200 -d 60s --latency https://localhost/1kb
+copy	1200000	983.31	71910000	2.25	2.69	3.09	3.90	4.26	4.43	4.53	4.53
+Run[30] 30
+/etc/nginx/nginx.conf
+worker_processes 4;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 10000 -t 1 -C 8,9 -c 200 -d 60s --latency https://localhost/1kb
+copy	11980000	9832.42	719110000	3.05	3.68	4.16	5.10	35.74	55.74	56.83	56.96
+Run[31] 31
+/etc/nginx/nginx.conf
+worker_processes 4;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 100000 -t 1 -C 8,9 -c 200 -d 60s --latency https://localhost/1kb
+copy	92630000	76004.48	5430000000	%!s(float64=7790)	%!s(float64=10620)	%!s(float64=12280)	%!s(float64=13740)	%!s(float64=14550)	%!s(float64=14850)	%!s(float64=14930)	%!s(float64=14950)
+Run[32] 32
+/etc/nginx/nginx.conf
+worker_processes 4;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000000 -t 1 -C 8,9 -c 200 -d 60s --latency https://localhost/1kb
+copy	92600000	75980.12	5430000000	%!s(float64=31830)	%!s(float64=43190)	%!s(float64=49970)	%!s(float64=54000)	%!s(float64=54600)	%!s(float64=54600)	%!s(float64=54600)	%!s(float64=54600)
+Run[33] 33
+/etc/nginx/nginx.conf
+worker_processes 4;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000 -t 1 -C 8,9 -c 400 -d 60s --latency https://localhost/1kb
+copy	1200000	982.63	71860000	1.81	3.10	3.86	5.19	5.87	6.04	6.22	6.22
+Run[34] 34
+/etc/nginx/nginx.conf
+worker_processes 4;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 10000 -t 1 -C 8,9 -c 400 -d 60s --latency https://localhost/1kb
+copy	11940000	9792.64	716130000	2.03	2.98	3.64	5.04	22.46	46.30	48.61	51.65
+Run[35] 35
+/etc/nginx/nginx.conf
+worker_processes 4;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 100000 -t 1 -C 8,9 -c 400 -d 60s --latency https://localhost/1kb
+copy	89820000	73696.92	5260000000	%!s(float64=8500)	%!s(float64=11440)	%!s(float64=13330)	%!s(float64=14410)	%!s(float64=15320)	%!s(float64=16050)	%!s(float64=16270)	%!s(float64=16320)
+Run[36] 36
+/etc/nginx/nginx.conf
+worker_processes 4;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000000 -t 1 -C 8,9 -c 400 -d 60s --latency https://localhost/1kb
+copy	90480000	74235.71	5300000000	%!s(float64=32049.999999999996)	%!s(float64=43120)	%!s(float64=49840)	%!s(float64=54000)	%!s(float64=54600)	%!s(float64=54600)	%!s(float64=54600)	%!s(float64=54600)

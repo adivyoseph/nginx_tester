@@ -1,0 +1,23 @@
+Run[1] 1
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
+copy	1200000	983.29	71910000	1.84	2.32	2.79	3.86	4.51	4.72	4.79	4.79
+Run[2] 2
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 10000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
+copy	11980000	9832.47	719040000	1.68	2.18	2.51	3.34	25.09	41.89	47.04	47.74
+Run[3] 3
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 100000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
+copy	50750000	41636.21	2970000000	19780	26890	31150	33750	34010	34050	34080	34080
+Run[4] 4
+/etc/nginx/nginx.conf
+worker_processes 1;
+worker_cpu_affinity_list 10,11,12,13,14,15;
+/home/martin/amd_wrk2/wrk --rate 1000000 -t 1 -C 8,9 -c 100 -d 60s --latency https://localhost/1kb
