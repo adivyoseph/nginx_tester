@@ -1,7 +1,0 @@
-
-
-====++++++++++++++++++++++++++====
-./tests/test1/config.yml:
- Name: test4
- Version: 1.0.0
- Description: sides cars over 16 cpus
