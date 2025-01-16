@@ -1,0 +1,269 @@
+name: "test7"
+version: "1.0.0"
+description: "wrk2 on i chiplet, SMT ,  grow nginx on the rest"
+runs: 
+  1: {
+    name: 1,
+    worker_processes: 2,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  2: {
+    name: 2,
+    worker_processes: 4,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  3: {
+    name: 3,
+    worker_processes: 6,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106],  
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  4: {
+     name: 4,
+    worker_processes: 8,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106],  
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  5: {
+     name: 5,
+    worker_processes: 10,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106],  
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  6: {
+    name: 6,
+    worker_processes: 12,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  7: {
+     name: 7,
+    worker_processes: 14,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  8: {
+     name: 8,
+    worker_processes: 16,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  9: {
+     name: 9,
+    worker_processes: 18,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  10: {
+     name: 10,
+    worker_processes: 20,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  11: {
+    name: 11,
+    worker_processes: 22,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  12: {
+    name: 12,
+    worker_processes: 24,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  13: {
+    name: 13,
+    worker_processes: 26,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106],  
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  14: {
+     name: 14,
+    worker_processes: 28,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106],  
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  15: {
+     name: 15,
+    worker_processes: 30,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106],  
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  16: {
+    name: 16,
+    worker_processes: 32,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  17: {
+     name: 17,
+    worker_processes: 34,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  18: {
+     name: 18,
+    worker_processes: 36,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  19: {
+     name: 19,
+    worker_processes: 38,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  20: {
+     name: 20,
+    worker_processes: 40,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  21: {
+    name: 21,
+    worker_processes: 42,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  22: {
+    name: 22,
+    worker_processes: 44,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106], 
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  23: {
+    name: 23,
+    worker_processes: 46,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106],  
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  24: {
+     name: 24,
+    worker_processes: 48,
+    worker_cpu_affinity_list: [16,80,17,81,18,82,19,83,20,84,21,85,22,86,23,87,24,88,25,89,26,90,27,91,28,92,29,93,30,94,31,95,32,96,33,97,34,98,45,99,36,100,37,101,38,102,39,103,40,104,41,105,42,106],  
+
+    wrk_rate: 1000,
+    wrk_threads: 8,
+    wrk_cpus: [8,72,9,73],
+    wrk_connections: 100,
+    wrk_file: "https://localhost/1kb"
+  }
+  

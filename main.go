@@ -40,6 +40,7 @@ type TestConfig struct {
 func main() {
 	fmt.Printf("Nginx tester version 1.0\n")
 	testDir := flag.String("d", "", "test directory to run")
+	singleRun := flag.Int("r", 1, "single run number")
 	help := flag.Bool("help", false, "Help")
 	obj := TestConfig{}
 
@@ -87,6 +88,8 @@ func main() {
 	}
 	defer logFile.Close()
 
+	fmt.Fprintf(logFile, " log for %s\n", testDir)
+
 	//fmt.Println("Log file created ", pathLogFile)
 
 	for _, file := range files {
@@ -103,6 +106,8 @@ func main() {
 				return
 			}
 
+			fmt.Fprintf(logFile, " log for %s\n", pathConfigFile)
+
 			err = yaml.Unmarshal(yamlFile, &obj)
 			if err != nil {
 				fmt.Printf("Unmarshal: %v\n", err)
@@ -116,17 +121,39 @@ func main() {
 					fmt.Printf("        %s\n", run.Wrk_file)
 				}
 			*/
+			break
 		}
 	}
 
+	//log header
 	runCnt := len(obj.Runs)
-	for i := 1; i <= runCnt; i++ {
+	i := 1
+	if *singleRun > 0 {
+		i = *singleRun
+		runCnt = i
+		run := obj.Runs[i]
+		cpuCnt := len(run.Wrk_cpus)
+		var cpuStr string
+		for i := 0; i < cpuCnt; i++ {
+			cpu := run.Wrk_cpus[i]
+			if (i + 1) == cpuCnt {
+				cpuStr += cpu
+			} else {
+				cpuStr += cpu
+				cpuStr += ","
+			}
+		}
+		fmt.Printf("/home/martin/amd_wrk2/wrk" + " " + "--rate" + " " + run.Wrk_rate + " " + "-t" + " " + strconv.Itoa(run.Wrk_threads) + " " + "-C" + " " + cpuStr + " " + "-c" + " " + run.Wrk_connections + " " + "-d" + " " + "60s" + " " + "--latency" + " " + run.Wrk_file)
+		fmt.Printf("\n")
+	}
+
+	for ; i <= runCnt; i++ {
 		run := obj.Runs[i]
 		fmt.Printf("Run[%d] %s\n", i, run.Name)
 		fmt.Printf("        %v\n", run.Worker_cpu_affinity_list)
 		fmt.Printf("        %s\n", run.Wrk_file)
 
-		fmt.Fprintf(logFile, "Run[%d] %s\n", i, run.Name)
+		fmt.Fprintf(logFile, "Run[%d]\t%s\t", i, run.Name)
 
 		//build nginx config file
 		_ = nginxConf(logFile, run)
@@ -157,7 +184,7 @@ func main() {
 		}
 		//fmt.Printf("cpuStr >%s<\n", cpuStr)
 		//fmt.Printf("connection %s\n", run.Wrk_connections)
-		fmt.Fprintf(logFile, "/home/martin/amd_wrk2/wrk"+" "+"--rate"+" "+run.Wrk_rate+" "+"-t"+" "+strconv.Itoa(run.Wrk_threads)+" "+"-C"+" "+cpuStr+" "+"-c"+" "+run.Wrk_connections+" "+"-d"+" "+"60s"+" "+"--latency"+" "+run.Wrk_file)
+		//fmt.Printf( "/home/martin/amd_wrk2/wrk"+" "+"--rate"+" "+run.Wrk_rate+" "+"-t"+" "+strconv.Itoa(run.Wrk_threads)+" "+"-C"+" "+cpuStr+" "+"-c"+" "+run.Wrk_connections+" "+"-d"+" "+"60s"+" "+"--latency"+" "+run.Wrk_file)
 		cmd = exec.Command("/home/martin/amd_wrk2/wrk", "--rate", run.Wrk_rate, "-t", strconv.Itoa(run.Wrk_threads), "-C", cpuStr, "-c", run.Wrk_connections, "-d", "60s", "--latency", run.Wrk_file)
 		out, err = cmd.CombinedOutput()
 		if err != nil {
@@ -229,7 +256,7 @@ func extractResults(logFile *os.File, out []byte) {
 	//for i := 0; i < len(tockens); i++ {
 	//	fmt.Printf("%d %s\n", i, tockens[i])
 	//}
-	fmt.Fprintf(logFile, "\ncopy")
+	//fmt.Fprintf(logFile, "\ncopy")
 	for i := len(tockens) - 3; i < len(tockens); i++ {
 		if tockens[i] == "Transfer/sec:" {
 			fmt.Printf("Transfer/sec: %s\n", tockens[i+1])
@@ -328,40 +355,45 @@ func nginxConf(logFile *os.File, run TestRun) error {
 	}
 	defer confFile.Close()
 
-	fmt.Fprintf(logFile, "/etc/nginx/nginx.conf\n")
+	//fmt.Fprintf(logFile, "/etc/nginx/nginx.conf\n")
+	fmt.Fprintf(logFile, strconv.Itoa(run.Wrk_threads)+"\t"+run.Wrk_rate+"\t"+run.Wrk_connections+"\t1kb\t"+run.Worker_processes+"\t ")
 
 	fmt.Fprintf(confFile, "worker_processes %s;\n", run.Worker_processes)
-	fmt.Fprintf(logFile, "worker_processes %s;\n", run.Worker_processes)
+	fmt.Fprintf(confFile, "worker_rlimit_nofile 100000;\n")
+	//fmt.Fprintf(logFile, "worker_processes %s;\n", run.Worker_processes)
 	if len(run.Worker_cpu_affinity_list) > 0 {
 		fmt.Fprintf(confFile, "worker_cpu_affinity_list ")
-		fmt.Fprintf(logFile, "worker_cpu_affinity_list ")
+		//fmt.Fprintf(logFile, "worker_cpu_affinity_list ")
 		cpuCnt := len(run.Worker_cpu_affinity_list)
 		for i := 0; i < cpuCnt; i++ {
 			cpu := run.Worker_cpu_affinity_list[i]
 			if (i + 1) == cpuCnt {
 				fmt.Fprintf(confFile, "%s;\n", cpu)
-				fmt.Fprintf(logFile, "%s;\n", cpu)
+				//fmt.Fprintf(logFile, "%s;\n", cpu)
 			} else {
 				fmt.Fprintf(confFile, "%s,", cpu)
-				fmt.Fprintf(logFile, "%s,", cpu)
+				//fmt.Fprintf(logFile, "%s,", cpu)
 			}
 		}
 	} else {
 		args := len(run.Worker_cpu_affinity)
 		if args == 1 {
 			fmt.Fprintf(confFile, "worker_cpu_affinity %s;\n", run.Worker_cpu_affinity[0])
-			fmt.Fprintf(logFile, "worker_cpu_affinity %s;\n", run.Worker_cpu_affinity[0])
+			//fmt.Fprintf(logFile, "worker_cpu_affinity %s;\n", run.Worker_cpu_affinity[0])
 
 		} else {
 			fmt.Fprintf(confFile, "worker_cpu_affinity %s %s;\n", run.Worker_cpu_affinity[0], run.Worker_cpu_affinity[1])
-			fmt.Fprintf(logFile, "worker_cpu_affinity %s %s;\n", run.Worker_cpu_affinity[0], run.Worker_cpu_affinity[1])
+			//fmt.Fprintf(logFile, "worker_cpu_affinity %s %s;\n", run.Worker_cpu_affinity[0], run.Worker_cpu_affinity[1])
 		}
 
 	}
 
 	fmt.Fprintf(confFile, "error_log   /var/log/nginx/error.log;\n")
-	fmt.Fprintf(confFile, "events {\n\n}\n")
+	fmt.Fprintf(confFile, "events {\n")
+	fmt.Fprintf(confFile, "      worker_connections 10000;\n}\n")
 	fmt.Fprintf(confFile, "http {\n")
+	fmt.Fprintf(confFile, "    open_file_cache max=1024 inactive=10s;\n")
+	fmt.Fprintf(confFile, "    open_file_cache_valid 120s;\n")
 	fmt.Fprintf(confFile, "    include       mime.types;\n")
 	fmt.Fprintf(confFile, "   default_type  application/octet-stream;\n")
 	fmt.Fprintf(confFile, "     include /etc/nginx/conf.d/*.conf;\n}\n")

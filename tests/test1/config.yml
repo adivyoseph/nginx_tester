@@ -7,9 +7,9 @@ runs:
     worker_processes: 1,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000,
+    wrk_rate: 1000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 100,
     wrk_file: "https://localhost/1kb"
   }
@@ -18,9 +18,9 @@ runs:
     worker_processes: 1,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 10000,
+      wrk_rate: 500000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 100,
     wrk_file: "https://localhost/1kb"
   }
@@ -29,9 +29,9 @@ runs:
     worker_processes: 1,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 100000,
+      wrk_rate: 5000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 100,
     wrk_file: "https://localhost/1kb"
   }
@@ -40,9 +40,9 @@ runs:
     worker_processes: 1,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000000,
+      wrk_rate: 50000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 100,
     wrk_file: "https://localhost/1kb"
   }
@@ -51,9 +51,9 @@ runs:
     worker_processes: 1,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000,
+    wrk_rate: 1000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 200,
     wrk_file: "https://localhost/1kb"
   }
@@ -62,9 +62,9 @@ runs:
     worker_processes: 1,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 10000,
+      wrk_rate: 500000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 200,
     wrk_file: "https://localhost/1kb"
   }
@@ -73,9 +73,9 @@ runs:
     worker_processes: 1,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 100000,
+      wrk_rate: 5000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 200,
     wrk_file: "https://localhost/1kb"
   }
@@ -84,9 +84,9 @@ runs:
     worker_processes: 1,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000000,
+      wrk_rate: 50000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 200,
     wrk_file: "https://localhost/1kb"
   }
@@ -95,9 +95,9 @@ runs:
     worker_processes: 1,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000,
+    wrk_rate: 1000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 400,
     wrk_file: "https://localhost/1kb"
   }
@@ -106,9 +106,9 @@ runs:
     worker_processes: 1,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 10000,
+      wrk_rate: 500000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 400,
     wrk_file: "https://localhost/1kb"
   }
@@ -117,9 +117,9 @@ runs:
     worker_processes: 1,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 100000,
+      wrk_rate: 5000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 400,
     wrk_file: "https://localhost/1kb"
   }
@@ -128,9 +128,9 @@ runs:
     worker_processes: 1,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000000,
+      wrk_rate: 50000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 400,
     wrk_file: "https://localhost/1kb"
   }
@@ -139,9 +139,9 @@ runs:
     worker_processes: 2,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000,
+    wrk_rate: 1000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 100,
     wrk_file: "https://localhost/1kb"
   }
@@ -150,9 +150,9 @@ runs:
     worker_processes: 2,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 10000,
+      wrk_rate: 500000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 100,
     wrk_file: "https://localhost/1kb"
   }
@@ -161,9 +161,9 @@ runs:
     worker_processes: 2,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 100000,
+      wrk_rate: 5000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 100,
     wrk_file: "https://localhost/1kb"
   }
@@ -172,9 +172,9 @@ runs:
     worker_processes: 2,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000000,
+      wrk_rate: 50000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 100,
     wrk_file: "https://localhost/1kb"
   }
@@ -183,9 +183,9 @@ runs:
     worker_processes: 2,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000,
+    wrk_rate: 1000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 200,
     wrk_file: "https://localhost/1kb"
   }
@@ -194,9 +194,9 @@ runs:
     worker_processes: 2,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 10000,
+      wrk_rate: 500000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 200,
     wrk_file: "https://localhost/1kb"
   }
@@ -205,9 +205,9 @@ runs:
     worker_processes: 2,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 100000,
+      wrk_rate: 5000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 200,
     wrk_file: "https://localhost/1kb"
   }
@@ -216,9 +216,9 @@ runs:
     worker_processes: 2,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000000,
+      wrk_rate: 50000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 200,
     wrk_file: "https://localhost/1kb"
   }
@@ -227,9 +227,9 @@ runs:
     worker_processes: 2,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000,
+    wrk_rate: 1000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 400,
     wrk_file: "https://localhost/1kb"
   }
@@ -238,9 +238,9 @@ runs:
     worker_processes: 2,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 10000,
+      wrk_rate: 500000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 400,
     wrk_file: "https://localhost/1kb"
   }
@@ -249,9 +249,9 @@ runs:
     worker_processes: 2,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 100000,
+      wrk_rate: 5000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 400,
     wrk_file: "https://localhost/1kb"
   }
@@ -260,9 +260,9 @@ runs:
     worker_processes: 2,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000000,
+      wrk_rate: 50000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 400,
     wrk_file: "https://localhost/1kb"
   }
@@ -271,9 +271,9 @@ runs:
     worker_processes: 4,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000,
+    wrk_rate: 1000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 100,
     wrk_file: "https://localhost/1kb"
   }
@@ -282,9 +282,9 @@ runs:
     worker_processes: 4,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 10000,
+      wrk_rate: 500000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 100,
     wrk_file: "https://localhost/1kb"
   }
@@ -293,9 +293,9 @@ runs:
     worker_processes: 4,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 100000,
+      wrk_rate: 5000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 100,
     wrk_file: "https://localhost/1kb"
   }
@@ -304,9 +304,9 @@ runs:
     worker_processes: 4,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000000,
+      wrk_rate: 50000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 100,
     wrk_file: "https://localhost/1kb"
   }
@@ -315,9 +315,9 @@ runs:
     worker_processes: 4,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000,
+    wrk_rate: 1000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 200,
     wrk_file: "https://localhost/1kb"
   }
@@ -326,9 +326,9 @@ runs:
     worker_processes: 4,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 10000,
+      wrk_rate: 500000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 200,
     wrk_file: "https://localhost/1kb"
   }
@@ -337,9 +337,9 @@ runs:
     worker_processes: 4,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 100000,
+      wrk_rate: 5000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 200,
     wrk_file: "https://localhost/1kb"
   }
@@ -348,9 +348,9 @@ runs:
     worker_processes: 4,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000000,
+      wrk_rate: 50000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 200,
     wrk_file: "https://localhost/1kb"
   }
@@ -359,9 +359,9 @@ runs:
     worker_processes: 4,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000,
+    wrk_rate: 1000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 400,
     wrk_file: "https://localhost/1kb"
   }
@@ -370,9 +370,9 @@ runs:
     worker_processes: 4,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 10000,
+      wrk_rate: 500000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 400,
     wrk_file: "https://localhost/1kb"
   }
@@ -381,9 +381,9 @@ runs:
     worker_processes: 4,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 100000,
+      wrk_rate: 5000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 400,
     wrk_file: "https://localhost/1kb"
   }
@@ -392,9 +392,9 @@ runs:
     worker_processes: 4,
     worker_cpu_affinity_list: [10,11,12,13,14,15], 
 
-    wrk_rate: 1000000,
+      wrk_rate: 50000000,
     wrk_threads: 1,
-    wrk_cpus: [8,9],
+    wrk_cpus: [8,9,10,11,12,13,14,15],
     wrk_connections: 400,
     wrk_file: "https://localhost/1kb"
   }
